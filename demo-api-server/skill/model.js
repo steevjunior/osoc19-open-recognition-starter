@@ -9,10 +9,10 @@ const createTable = () => {
   CREATE TABLE IF NOT EXISTS
     skill
     (
-      id VARCHAR(55) PRIMARY KEY,
+      id SERIAL PRIMARY KEY,
       name VARCHAR(30) NOT NULL,
-      author NUMERIC NOT NULL REFERENCES users(id),
-      reciever NUMERIC  NOT NULL REFERENCES users(id)
+      author SERIAL NOT NULL REFERENCES users(id),
+      reciever SERIAL  NOT NULL REFERENCES users(id)
     );
 `);
   console.log("skill table created successfully!!!!!");

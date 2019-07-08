@@ -8,9 +8,9 @@ const createTable = () => {
   CREATE TABLE IF NOT EXISTS
     trust
     (
-      id VARCHAR(55) PRIMARY KEY,
-      userrequesting NUMERIC NOT NULL REFERENCES users(id),
-      userrecieving NUMERIC NOT NULL REFERENCES users(id),
+      id SERIAL PRIMARY KEY,
+      userrequesting SERIAL NOT NULL REFERENCES users(id),
+      userrecieving SERIAL NOT NULL REFERENCES users(id),
       daterequesting DATE  NOT NULL,
       dateapproving DATE NOT NULL,
       active BOOLEAN NOT NULL,

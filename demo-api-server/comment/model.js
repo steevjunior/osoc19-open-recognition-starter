@@ -8,9 +8,9 @@ const createTable = () => {
   CREATE TABLE IF NOT EXISTS
     comment
     (
-      id VARCHAR(55) PRIMARY KEY,
-      author NUMERIC NOT NULL REFERENCES users(id),
-      reciever NUMERIC  NOT NULL REFERENCES users(id),
+      id SERIAL PRIMARY KEY,
+      author SERIAL NOT NULL REFERENCES users(id),
+      reciever SERIAL  NOT NULL REFERENCES users(id),
       creationdate DATE  NOT NULL,
       message TEXT NOT NULL
     );
